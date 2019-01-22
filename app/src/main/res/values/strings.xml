@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HighTechnologiesCenterTest</string>
+    <string name="company">Company : </string>
+    <string name="age">Age :</string>
+    <string name="competences">Competences : </string>
+    <string name="name">Name : </string>
+    <string name="phone_number">Phone number:</string>
+    <string name="skills">Skills : </string>
+</resources>
