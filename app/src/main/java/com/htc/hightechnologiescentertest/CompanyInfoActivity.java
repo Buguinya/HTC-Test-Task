@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import retrofit2.Call;
@@ -104,6 +106,15 @@ public class CompanyInfoActivity extends AppCompatActivity {
                     mCompanyAgeTv.setText(mCompany.getAge());
                     mCompanyCompetences.setText(mCompany.getCompetences().toString());
                     mEmployees = mCompany.getEmployees();
+                    Collections.sort(mEmployees, new Comparator<Employee>() {
+                        @Override
+                        public int compare(Employee o1, Employee o2) {
+                            if (o1.getName().compareTo(o2.getName()) > 0){
+                                return 1;
+                            }else
+                            return -1;
+                        }
+                    });
                     for (Employee employee: mEmployees) {
                         mAdapter.add(new Item(employee.getName(), employee.getPhoneNumber(), employee.getSkills()));
                     }
